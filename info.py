@@ -6,30 +6,29 @@ id_pattern = re.compile(r'^.\d+$')
 # Bot information
 SESSION = environ.get('SESSION', 'Media_search')
 USER_SESSION = environ.get('USER_SESSION', 'User_Bot')
-API_ID = int(environ['API_ID'])
-API_HASH = environ['API_HASH']
-BOT_TOKEN = environ['BOT_TOKEN']
-USERBOT_STRING_SESSION = environ.get('USERBOT_STRING_SESSION')
+API_ID = 912074
+API_HASH = '1a09c7cdf2751540f4dab73e87305af9'
+BOT_TOKEN = '1990089587:AAG2idmBbWPGkLobE4_WPB3bVnNmWU-pfz4'
+USERBOT_STRING_SESSION = 'BQCThh3joj6RaI1leL13UAOKotjVGU5FiQE2dV5pWj0oXXIbnhuf-wVrAq3tGHAV67gVuue-mjqERsJwwwKX_kOl_LZvHDkuw9NPc9KtCo6XDeLybrca1BrnZ27_a0IqAm3tJObEHvuTAdFTpG907eddwDTefpx-eb9DmhfJVINcVkkHR3TFhzizvmGPGWLMkBbjKh_lMFFJ-8cjbcKMDUd8FVW4QNil0Guygn717G_WOdLxleP5KNzHkiT0uK5c4OcvYzNXfPwJFTR-BDn5sIXQ52bYcmvu-GQQcWzcSdYKG1fQKYkl38Eqrq66s0Y7yqdLBZIc7OZFUPQw1tulwQsmKtqUPgA'
 
 # Bot settings
-CACHE_TIME = int(environ.get('CACHE_TIME', 300))
-USE_CAPTION_FILTER = bool(environ.get('USE_CAPTION_FILTER', False))
+CACHE_TIME = 300
+USE_CAPTION_FILTER = True
 
 # Admins, Channels & Users
-ADMINS = [int(admin) if id_pattern.search(admin) else admin for admin in environ['ADMINS'].split()]
-CHANNELS = [int(ch) if id_pattern.search(ch) else ch for ch in environ['CHANNELS'].split()]
+ADMINS = [718967870]
+CHANNELS = [-1001336097923, -1001205787325, -1001430310853, -1001193592929, -1001236158458]
 auth_users = [int(user) if id_pattern.search(user) else user for user in environ.get('AUTH_USERS', '').split()]
-AUTH_USERS = (auth_users + ADMINS) if auth_users else []
-auth_channel = environ.get('AUTH_CHANNEL')
-AUTH_CHANNEL = int(auth_channel) if auth_channel and id_pattern.search(auth_channel) else auth_channel
+AUTH_USERS = []
+AUTH_CHANNEL = [-1001367552406]
 
 # MongoDB information
 DATABASE_URI = environ['DATABASE_URI']
 DATABASE_NAME = environ['DATABASE_NAME']
-COLLECTION_NAME = environ.get('COLLECTION_NAME', 'Telegram_files')
+COLLECTION_NAME = Telegram_files
 
 # Messages
-default_start_msg = """
+START_MSG = """
 **Hi, I'm a Telegram Movie Search Bot**
 Click **SEARCH Button** and type Movie name and year (Correct imdb Spelling)..
 
@@ -37,6 +36,6 @@ Our Second Bot **@ProSearchRobot**
 Bot Updates **@ProSearchBots**
 """
 
-START_MSG = environ.get('START_MSG', default_start_msg)
+
 SHARE_BUTTON_TEXT = 'Checkout {username} for searching files'
-INVITE_MSG = environ.get('INVITE_MSG', 'First JOIN our BOT Channel **@ProSearchBots**')
+INVITE_MSG = 'First JOIN our BOT Channel **@ProSearchBots**'
